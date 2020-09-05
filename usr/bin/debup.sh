@@ -327,33 +327,28 @@ elif [[ $# -gt 3 ]] && [[ ( $3 == -mod || $4 == -mod ) ]]; then
 	git add --all;
 	
 	while [[ "$cm" == '' ]]; do
-	read -p "Input Commit Messages: " cm;
-		git commit -m "$cm";
+	read -p "Input Commit Messages: " cm;done
+		git commit -m "$cm" > /dev/null 2>&1;
 		if [[ ! ${?} -eq 0 ]]; then
 			while [[ "$ue" == '' ]]; do
-			read -p "Input user.email": ue;
+			read -p "Input user.email": ue;done
 			git config --global user.email "$ue"
-			break;
-			done
 			while [[ "$un" == '' ]]; do
-			read -p "Input user.name": un;
+			read -p "Input user.name": un;done
 			git config --global user.name "$un"
-			break;
-			done
 			cm='';
 		fi
 	while true; do
-		git push origin master;
-		if [[ ! ${?} -eq 0 ]]; then
-			echo "bruhh.. you're typo"
-			rm -r /var/mobile/Debrep
-			exit 45
-		else
-			rm -r /var/mobile/Debrep > /dev/null 2>&1;
-			break 2;
-		fi
-	break;
-	done
+	git push origin master > /dev/null 2>&1;
+	if [[ ! ${?} -eq 0 ]]; then
+		echo "bruhh.. you're typo"
+		rm -r /var/mobile/Debrep > /dev/null 2>&1;
+		exit 45
+	else
+		rm -r /var/mobile/Debrep > /dev/null 2>&1;
+		echo "Uploading..."
+		break 2;
+	fi
 	break;
 	done
 apt-get update;
@@ -385,33 +380,28 @@ elif [[ ( $3 == -v || $4 == -v ) ]]; then
 echo "Uploading..."
 git add --all;
 	while [[ "$cm" == '' ]]; do
-	read -p "Input Commit Messages: " cm;
-	git commit -m "$cm";
-	if [[ ! ${?} -eq 0 ]]; then
-		while [[ "$ue" == '' ]]; do
-		read -p "Input user.email": ue;
-			git config --global user.email "$ue"
-		break;
-		done
-		while [[ "$un" == '' ]]; do
-		read -p "Input user.name": un;
-			git config --global user.name "$un"
-		break;
-		done
-		cm='';
-	fi
-	while true; do
-		git push origin master;
+	read -p "Input Commit Messages: " cm;done
+		git commit -m "$cm" > /dev/null 2>&1;
 		if [[ ! ${?} -eq 0 ]]; then
-			echo "bruhh.. you're typo"
-			rm -r /var/mobile/Debrep > /dev/null 2>&1;
-			exit 45
-		else
-			rm -r /var/mobile/Debrep > /dev/null 2>&1;
-			break 2;
+			while [[ "$ue" == '' ]]; do
+			read -p "Input user.email": ue;done
+			git config --global user.email "$ue"
+			while [[ "$un" == '' ]]; do
+			read -p "Input user.name": un;done
+			git config --global user.name "$un"
+			cm='';
 		fi
-	break;
-	done
+	while true; do
+	git push origin master > /dev/null 2>&1;
+	if [[ ! ${?} -eq 0 ]]; then
+		echo "bruhh.. you're typo"
+		rm -r /var/mobile/Debrep > /dev/null 2>&1;
+		exit 45
+	else
+		rm -r /var/mobile/Debrep > /dev/null 2>&1;
+		echo "Uploading..."
+		break 2;
+	fi
 	break;
 	done
 apt-get update;
@@ -441,37 +431,30 @@ else
 	
 	git add --all;
 	while [[ "$cm" == '' ]]; do
-	read -p "Input Commit Messages: " cm;
+	read -p "Input Commit Messages: " cm;done
 		git commit -m "$cm" > /dev/null 2>&1;
-	
-	if [[ ! ${?} -eq 0 ]]; then
-		while [[ "$ue" == '' ]]; do
-		read -p "Input user.email": ue;
+		if [[ ! ${?} -eq 0 ]]; then
+			while [[ "$ue" == '' ]]; do
+			read -p "Input user.email": ue;done
 			git config --global user.email "$ue"
-		break;
-		done
-		while [[ "$un" == '' ]]; do
-		read -p "Input user.name": un;
+			while [[ "$un" == '' ]]; do
+			read -p "Input user.name": un;done
 			git config --global user.name "$un"
-		break;
-		done
-		cm='';
+			cm='';
+		fi
+	while true; do
+	git push origin master > /dev/null 2>&1;
+	if [[ ! ${?} -eq 0 ]]; then
+		echo "bruhh.. you're typo"
+		rm -r /var/mobile/Debrep > /dev/null 2>&1;
+		exit 45
+	else
+		rm -r /var/mobile/Debrep > /dev/null 2>&1;
+		echo "Uploading..."
+		break 2;
 	fi
-		while true; do
-			git push origin master > /dev/null 2>&1;
-			if [[ ! ${?} -eq 0 ]]; then
-				echo "bruhh.. you're typo"
-				rm -r /var/mobile/Debrep > /dev/null 2>&1
-				exit 45
-			else
-				rm -r /var/mobile/Debrep > /dev/null 2>&1;
-				echo "Uploading..."
-				break 2;
-			fi
-		break;
-		done
-		break;
-		done
+	break;
+	done
 apt-get update > /dev/null 2>&1;
 fi
 
