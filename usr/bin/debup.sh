@@ -269,10 +269,10 @@ if [[ $# -lt 4 ]] && [[ $3 == -mod ]]; then
 		git commit -m "$cm" > /dev/null 2>&1;
 		if [[ ! ${?} -eq 0 ]]; then
 			while [[ "$ue" == '' ]]; do
-			read -p "Input user.email": ue;done
+			read -p "Input user.email:" ue;done
 			git config --global user.email "$ue"
 			while [[ "$un" == '' ]]; do
-			read -p "Input user.name": un;done
+			read -p "Input user.name:" un;done
 			git config --global user.name "$un"
 			cm='';
 		fi
@@ -330,10 +330,10 @@ elif [[ $# -gt 3 ]] && [[ ( $3 == -mod || $4 == -mod ) ]]; then
 		git commit -m "$cm" > /dev/null 2>&1;
 		if [[ ! ${?} -eq 0 ]]; then
 			while [[ "$ue" == '' ]]; do
-			read -p "Input user.email": ue;done
+			read -p "Input user.email:" ue;done
 			git config --global user.email "$ue"
 			while [[ "$un" == '' ]]; do
-			read -p "Input user.name": un;done
+			read -p "Input user.name:" un;done
 			git config --global user.name "$un"
 			cm='';
 		fi
@@ -383,10 +383,10 @@ git add --all;
 		git commit -m "$cm" > /dev/null 2>&1;
 		if [[ ! ${?} -eq 0 ]]; then
 			while [[ "$ue" == '' ]]; do
-			read -p "Input user.email": ue;done
+			read -p "Input user.email:" ue;done
 			git config --global user.email "$ue"
 			while [[ "$un" == '' ]]; do
-			read -p "Input user.name": un;done
+			read -p "Input user.name:" un;done
 			git config --global user.name "$un"
 			cm='';
 		fi
@@ -435,10 +435,10 @@ else
 		git commit -m "$cm" > /dev/null 2>&1;
 		if [[ ! ${?} -eq 0 ]]; then
 			while [[ "$ue" == '' ]]; do
-			read -p "Input user.email": ue;done
+			read -p "Input user.email:" ue;done
 			git config --global user.email "$ue"
 			while [[ "$un" == '' ]]; do
-			read -p "Input user.name": un;done
+			read -p "Input user.name:" un;done
 			git config --global user.name "$un"
 			cm='';
 		fi
