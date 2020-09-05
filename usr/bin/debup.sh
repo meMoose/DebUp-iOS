@@ -17,15 +17,19 @@ if [[ $(echo "$1" | grep -oE '[^.]+$') == git ]]; then
 echo "Invalid, please check your repo url.
 (Input url without '.git')"
 exit 2
+elif [[ $# -eq 1 ]]; then
+echo "Please input deb directory path"
+exit 3
 else
    if [[ $1 =~ .*github.com.* ]]; then
      :
    else
      echo "Invalid, please check your repo url.
 (e.g 'https://github.com/../..')"
-   exit 3
+   exit 4
    fi
 fi
+
 
 
 NAME=$( echo $1 | cut -d "/" -f5 )
