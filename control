@@ -1,0 +1,13 @@
+Package: com.moose.debup
+Name: DebUp
+Section: Development
+Installed-Size: 3,2
+Author: Moose <gathering011@gmail.com>
+Maintainer: Moose <gathering011@gmail.com>
+Architecture: iphoneos-arm
+Version: 1.0.0
+Depends: dpkg-perl, git
+Description: A command line for developers to manage and upload deb packages to cydia repo (Github cydia repo)
+Homepage: https://github.com/meMoose
+Tag: role::developer, purpose::console
+Depiction: https://memoose.github.io/repo/depic/DebUp.html
