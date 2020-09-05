@@ -30,8 +30,6 @@ else
    fi
 fi
 
-
-
 NAME=$( echo $1 | cut -d "/" -f5 )
 REPO=/var/mobile/Debrep/$NAME
 
@@ -242,6 +240,7 @@ if [[ $# -lt 4 ]] && [[ $3 == -mod ]]; then
 	rm $2/*.deb;
 	cp $DEBUP/* $2;
 	echo "Creating Hash..."
+	cd $REPO;
 	rm Packages > /dev/null 2>&1;
 	rm Packages.bz2 > /dev/null 2>&1;
 	rm Packages.gz > /dev/null 2>&1;
@@ -301,6 +300,7 @@ elif [[ $# -gt 3 ]] && [[ ( $3 == -mod || $4 == -mod ) ]]; then
 	rm $2/*.deb;
 	cp $DEBUP/* $2;
 	echo "Creating Hash..."
+	cd $REPO;
 	rm Packages > /dev/null 2>&1;
 	rm Packages.bz2 > /dev/null 2>&1;
 	rm Packages.gz > /dev/null 2>&1;
@@ -320,7 +320,6 @@ elif [[ $# -gt 3 ]] && [[ ( $3 == -mod || $4 == -mod ) ]]; then
 		exit 0
 		break;;
 		esac
-		break;
 	done
 	echo "Uploading..."
 	
@@ -356,6 +355,7 @@ apt-get update;
 elif [[ ( $3 == -v || $4 == -v ) ]]; then
 	cp $2/*.deb $REPO/debs > /dev/null 2>&1;
 	echo "Creating Hash..."
+	cd $REPO;
 	rm Packages > /dev/null 2>&1;
 	rm Packages.bz2 > /dev/null 2>&1;
 	rm Packages.gz > /dev/null 2>&1;
@@ -374,7 +374,6 @@ elif [[ ( $3 == -v || $4 == -v ) ]]; then
 		exit 0
 		break;;
 	esac
-	break;
 	done
 
 echo "Uploading..."
@@ -408,6 +407,7 @@ apt-get update;
 
 else
 	echo "Creating Hash..."
+	cd $REPO;
 	rm Packages > /dev/null 2>&1;
 	rm Packages.bz2 > /dev/null 2>&1;
 	rm Packages.gz > /dev/null 2>&1;
