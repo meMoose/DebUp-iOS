@@ -17,14 +17,26 @@ then let it finish.
 
 # Usage
 
-`debup` [Github Repo Url] [Deb Directory Path] [Options]
 
-Opt.
+usage : `debup` [github repo url] [deb directory path] [opt]
 
--mod  : modifying info of packages before uploading
-
--v    : verboose mode
+without opt will upload all deb files.
 
 
-Note. this command line by default will upload packages without modifying.
+opt.
 
+-mod  : modifying deb file info before uploading.
+
+-f    : add files to github repo. (files directory path)
+
+-v    : verbose mode.
+
+
+<use this opt without directory path>
+
+-c    : delete large file from github history (cache).
+
+-r    : delete deb packages from cydia repo.
+
+
+When using -c try not to delete your existing files."
