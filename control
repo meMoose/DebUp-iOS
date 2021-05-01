@@ -6,7 +6,7 @@ Author: Moose <gathering011@gmail.com>
 Maintainer: Moose <gathering011@gmail.com>
 Architecture: iphoneos-arm
 Version: 1.3.4
-Depends: dpkg-perl, git
+Depends: perl, git
 Description: A command line for developers to manage and upload deb packages to cydia repo (Github cydia repo) with a single click.
 Homepage: https://github.com/meMoose
 Tag: role::developer, purpose::console
